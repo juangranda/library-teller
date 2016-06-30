@@ -8,27 +8,18 @@ namespace Library
 {
     class Book : Media
     {
-        public override int RentalLength
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public override int RentalLength { get; set; }
 
         public override void PrintMediaDetails()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Book {0} ({1})", Title, Length);
+            Console.WriteLine("Rented on: {0}", RentedDate);
+            Console.WriteLine("Due on {0}", ReturnDueDate());
         }
 
         public override DateTime ReturnDueDate()
         {
-            throw new NotImplementedException();
+            return RentedDate.AddDays(RentalLength);
         }
     }
 }
