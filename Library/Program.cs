@@ -20,6 +20,11 @@ namespace Library
             //populate mediaToRent with the values returned from getFile instead of an empty list e.g. "new List<string>();"
             //implement
             List<string> mediaToRent = new List<string>();
+            mediaToRent.Add("Type: Book, Title: The Count of Monte Cristo, Length: 928 pages");
+            mediaToRent.Add("Type: DVD,Title: The Count of Monte Cristo,Length: 2h 14m");
+            mediaToRent.Add("Type: Magazine,Title: People,Length: 50 pages");
+            mediaToRent.Add("Type: Book,Title: Pride & Prejudice,Length: 272 pages");
+            mediaToRent.Add("Type: DVD,Title: Avatar,Length: 2h 42m");
             
             //create a new list for us to use to store our media objects to rent
             List<Media> rentedMedia = new List<Media>();
@@ -44,11 +49,31 @@ namespace Library
                         //create a book object
                         //populate the book object with a title and length
                         //then add the newly created book to rentedMedia
+                        Book myBook = new Book();
+                        myBook.Title = title;
+                        myBook.Length = length;
+                        myBook.RentalLength = 7;
+                        rentedMedia.Add(myBook);
                     }
                     //complete for the DVD and Magazine media types
                         //implement
+                    if (type.Equals("DVD"))
+                    {
+                        DVD myDVD = new DVD();
+                        myDVD.Title = title;
+                        myDVD.Length = length;
+                        myDVD.RentalLength = 7;
+                        rentedMedia.Add(myDVD);
+                    }
+                    if (type.Equals("Magazine"))
+                    {
+                        Magazine myMagazine = new Magazine();
+                        myMagazine.Title = title;
+                        myMagazine.Length = length;
+                        myMagazine.RentalLength = 7;
+                        rentedMedia.Add(myMagazine);
+                    }
                 }
-            }
 
             //for each media item we have in the list print the details for each
             foreach (Media mediaItem in rentedMedia)
