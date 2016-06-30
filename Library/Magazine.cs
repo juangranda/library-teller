@@ -6,9 +6,20 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    class DVD : Media
+    class Magazine : Media
     {
-        public override int RentalLength { get; set; }
+        public override int RentalLength
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public override void PrintMediaDetails()
         {
