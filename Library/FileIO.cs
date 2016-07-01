@@ -21,7 +21,7 @@ namespace Library
                 {
                     //throw appropriate exepction
                     //implement
-                    throw new FileNotFoundException();
+                    throw new FileNotFoundException("File not found", path);
                 }
 
                 //initialize the empty string we'll be using for each line
@@ -29,32 +29,33 @@ namespace Library
 
                 //open a StreamReader to the file specifcied in the path variable 
                 //implement
-                using (StreamReader sr = new StreamReader("Media.txt"))
+
+                using (StreamReader sr = new StreamReader(path))
                 {
                     //while reading a new from file, addd each line to mediaFile
                     //as long as each new line is not null
                     //implement
-                    while ((line = sr.ReadLine()) != null)
+                    line = sr.ReadLine();
+                    while (line != null)
                     {
-                        Console.WriteLine(line);
+                        mediaFile.Add(line);
+                        line = sr.ReadLine();
                     }
-                    sr.Close();
                 }
                 //remember to close your file
                 //file.Close();
-                
             }
             catch (FileNotFoundException)
             {
                 //write out appropriate message
                 //implement
-                Console.WriteLine("File not found. Check spelling and try again.");
+                Console.WriteLine("File not found.");
             }
             catch (Exception e)
             {
                 //write out the message of e
                 //implement
-                Console.WriteLine("Something went wrong");
+                Console.WriteLine(e.Message);
             }
 
             return mediaFile;
