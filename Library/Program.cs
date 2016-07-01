@@ -30,7 +30,7 @@ namespace Library
             List<Media> rentedMedia = new List<Media>();
 
             //for each line from the rental 
-            foreach(string s in mediaToRent)
+            foreach (string s in mediaToRent)
             {
                 //match each needed component
                 //populae with your regex to match the format
@@ -56,7 +56,7 @@ namespace Library
                         rentedMedia.Add(myBook);
                     }
                     //complete for the DVD and Magazine media types
-                        //implement
+                    //implement
                     if (type.Equals("DVD"))
                     {
                         DVD myDVD = new DVD();
@@ -74,12 +74,14 @@ namespace Library
                         rentedMedia.Add(myMagazine);
                     }
                 }
+            }
 
             //for each media item we have in the list print the details for each
             foreach (Media mediaItem in rentedMedia)
             {
-                //for each mediaItem call PrintMediaDetails()
+                    //for each mediaItem call PrintMediaDetails()
                     //implement
+                    mediaItem.PrintMediaDetails();
             }
 
             //halt the program so we can read the output
