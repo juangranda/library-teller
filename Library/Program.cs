@@ -48,7 +48,6 @@ namespace Library
                         Book myBook = new Book();
                         myBook.Title = title;
                         myBook.Length = length;
-                        myBook.RentalLength = 7;
                         rentedMedia.Add(myBook);
                     }
                     //complete for the DVD and Magazine media types
@@ -58,7 +57,6 @@ namespace Library
                         DVD myDVD = new DVD();
                         myDVD.Title = title;
                         myDVD.Length = length;
-                        myDVD.RentalLength = 5;
                         rentedMedia.Add(myDVD);
                     }
                     if (type.Equals("Magazine"))
@@ -66,7 +64,6 @@ namespace Library
                         Magazine myMagazine = new Magazine();
                         myMagazine.Title = title;
                         myMagazine.Length = length;
-                        myMagazine.RentalLength = 3;
                         rentedMedia.Add(myMagazine);
                     }
                 }

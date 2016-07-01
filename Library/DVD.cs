@@ -8,7 +8,17 @@ namespace Library
 {
     class DVD : Media
     {
-        public override int RentalLength { get; set; }
+        public override int RentalLength
+        {
+            get
+            {
+                return 14;
+            }
+            set
+            {
+
+            }
+        }
 
         public override void PrintMediaDetails()
         {
